@@ -1,6 +1,108 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "sequences": {
+      "root": "libs/sequences",
+      "sourceRoot": "libs/sequences/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/sequences/tsconfig.lib.json",
+              "libs/sequences/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/sequences/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/sequences/jest.config.js",
+            "tsConfig": "libs/sequences/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/libs/sequences",
+            "tsConfig": "libs/sequences/tsconfig.lib.json",
+            "packageJson": "libs/sequences/package.json",
+            "main": "libs/sequences/src/index.ts",
+            "assets": ["libs/sequences/*.md"]
+          }
+        }
+      }
+    },
+    "conditioners": {
+      "root": "libs/conditioners",
+      "sourceRoot": "libs/conditioners/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/conditioners/tsconfig.lib.json",
+              "libs/conditioners/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/conditioners/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/conditioners/jest.config.js",
+            "tsConfig": "libs/conditioners/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/libs/conditioners",
+            "tsConfig": "libs/conditioners/tsconfig.lib.json",
+            "packageJson": "libs/conditioners/package.json",
+            "main": "libs/conditioners/src/index.ts",
+            "assets": ["libs/conditioners/*.md"]
+          }
+        }
+      }
+    },
+    "function-seeker": {
+      "root": "libs/function-seeker",
+      "sourceRoot": "libs/function-seeker/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/function-seeker/tsconfig.lib.json",
+              "libs/function-seeker/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/function-seeker/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/function-seeker/jest.config.js",
+            "tsConfig": "libs/function-seeker/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
   },

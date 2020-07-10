@@ -21,5 +21,15 @@
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "sequences": {
+      "tags": []
+    },
+    "conditioners": {
+      "tags": []
+    },
+    "function-seeker": {
+      "tags": []
+    }
+  }
 }

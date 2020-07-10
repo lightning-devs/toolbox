@@ -15,7 +15,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@toolbox/sequences": ["libs/sequences/src/index.ts"],
+      "@toolbox/conditioners": ["libs/conditioners/src/index.ts"],
+      "@toolbox/function-seeker": ["libs/function-seeker/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
