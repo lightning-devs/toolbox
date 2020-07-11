@@ -1,5 +1,5 @@
 {
-  "name": "toolbox",
+  "name": "@lightning/toolbox",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -46,5 +46,9 @@
     "ts-node": "~7.0.0",
     "tslint": "~6.0.0",
     "typescript": "~3.8.3"
+  },
+  "dependencies": {
+    "awaity": "^1.0.0",
+    "lodash": "^4.17.19"
   }
 }

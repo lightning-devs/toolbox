@@ -1,5 +1,5 @@
 {
-  "npmScope": "toolbox",
+  "npmScope": "lightning",
   "affected": {
     "defaultBase": "master"
   },
