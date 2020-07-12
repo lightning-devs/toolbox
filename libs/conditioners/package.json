@@ -1,11 +1,12 @@
 {
   "name": "@lightning/conditioners",
   "version": "1.0.1",
+  "private": false,
   "scripts": {
     "test": "nx test conditioners"
   },
   "dependencies": {
     "@lightning/function-seeker": "^0.0.1"
   },
-  "gitHead": "2e4a517ee8eb98824a6e416d7678797408201fb9"
+  "gitHead": "578d9e9250383198839d2cc81aea5134f4086788"
 }
