@@ -29,7 +29,7 @@
         "build": {
           "builder": "@nrwl/node:package",
           "options": {
-            "outputPath": "dist/libs/sequences",
+            "outputPath": "libs/sequences/dist",
             "tsConfig": "libs/sequences/tsconfig.lib.json",
             "packageJson": "libs/sequences/package.json",
             "main": "libs/sequences/src/index.ts",
@@ -66,7 +66,7 @@
         "build": {
           "builder": "@nrwl/node:package",
           "options": {
-            "outputPath": "dist/libs/conditioners",
+            "outputPath": "libs/conditioners/dist",
             "tsConfig": "libs/conditioners/tsconfig.lib.json",
             "packageJson": "libs/conditioners/package.json",
             "main": "libs/conditioners/src/index.ts",
@@ -103,7 +103,7 @@
         "build": {
           "builder": "@nrwl/node:package",
           "options": {
-            "outputPath": "dist/libs/function-seeker",
+            "outputPath": "libs/function-seeker/dist",
             "tsConfig": "libs/function-seeker/tsconfig.lib.json",
             "packageJson": "libs/function-seeker/package.json",
             "main": "libs/function-seeker/src/index.ts",

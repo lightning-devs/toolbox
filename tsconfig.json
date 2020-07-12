@@ -16,9 +16,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@lightning/sequences": ["libs/sequences/src/index.ts"],
-      "@lightning/conditioners": ["libs/conditioners/src/index.ts"],
-      "@lightning/function-seeker": ["libs/function-seeker/src/index.ts"]
+      "@lightning-devs/sequences": ["libs/sequences/src/index.ts"],
+      "@lightning-devs/conditioners": ["libs/conditioners/src/index.ts"],
+      "@lightning-devs/function-seeker": ["libs/function-seeker/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

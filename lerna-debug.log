@@ -7,7 +7,7 @@
 0 silly argv }
 1 notice cli v3.22.1
 2 verbose rootPath C:\Users\abner.juarez\Documents\personal\toolbox
-3 verbose session 4f7f6de5f461002f
+3 verbose session 685a3a72ace368f4
 4 verbose user-agent lerna/3.22.1/node@v12.11.1+x64 (win32)
 5 silly argv {
 5 silly argv   _: [ 'publish' ],
@@ -16,7 +16,7 @@
 5 silly argv   lernaVersion: '3.22.1'
 5 silly argv }
 6 verbose rootPath C:\Users\abner.juarez\Documents\personal\toolbox
-7 info current version 1.0.0
+7 info current version 1.0.1
 8 silly isAnythingCommitted
 9 verbose isAnythingCommitted 1
 10 silly currentBranch
@@ -26,22 +26,18 @@
 14 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 0
 15 silly hasTags
 16 verbose hasTags true
-17 silly git-describe.sync "v1.0.0-1-gfe483d1" => {"lastTagName":"v1.0.0","lastVersion":"v1.0.0","refCount":"1","sha":"fe483d1","isDirty":false}
-18 info Looking for changed packages since v1.0.0
+17 silly git-describe.sync "v1.0.1-1-g980ace8" => {"lastTagName":"v1.0.1","lastVersion":"v1.0.1","refCount":"1","sha":"980ace8","isDirty":false}
+18 info Looking for changed packages since v1.0.1
 19 silly checking diff libs/conditioners
 20 silly found diff in libs/conditioners/package.json
 21 verbose filtered diff [ 'libs/conditioners/package.json' ]
 22 silly checking diff libs/sequences
 23 silly found diff in libs/sequences/package.json
-23 silly found diff in libs/sequences/src/lib/sequences.ts
-24 verbose filtered diff [
-24 verbose filtered diff   'libs/sequences/package.json',
-24 verbose filtered diff   'libs/sequences/src/lib/sequences.ts'
-24 verbose filtered diff ]
+24 verbose filtered diff [ 'libs/sequences/package.json' ]
 25 verbose updated @lightning/conditioners
 26 verbose updated @lightning/sequences
-27 verbose git-describe undefined => "v1.0.0-1-gfe483d1"
-28 silly git-describe parsed => {"lastTagName":"v1.0.0","lastVersion":"v1.0.0","refCount":"1","sha":"fe483d1","isDirty":false}
+27 verbose git-describe undefined => "v1.0.1-1-g980ace8"
+28 silly git-describe parsed => {"lastTagName":"v1.0.1","lastVersion":"v1.0.1","refCount":"1","sha":"980ace8","isDirty":false}
 29 info execute Skipping releases
 30 silly lifecycle No script for "preversion" in "@lightning/toolbox", continuing
 31 silly lifecycle No script for "preversion" in "@lightning/conditioners", continuing
@@ -54,10 +50,10 @@
 36 silly gitAdd   'libs/sequences/package.json',
 36 silly gitAdd   'lerna.json'
 36 silly gitAdd ]
-37 silly gitCommit v1.0.1
-38 verbose git [ 'commit', '-m', 'v1.0.1' ]
-39 silly gitTag v1.0.1
-40 verbose git [ 'tag', 'v1.0.1', '-m', 'v1.0.1' ]
+37 silly gitCommit v1.0.2
+38 verbose git [ 'commit', '-m', 'v1.0.2' ]
+39 silly gitTag v1.0.2
+40 verbose git [ 'tag', 'v1.0.2', '-m', 'v1.0.2' ]
 41 silly lifecycle No script for "postversion" in "@lightning/conditioners", continuing
 42 silly lifecycle No script for "postversion" in "@lightning/sequences", continuing
 43 silly lifecycle No script for "postversion" in "@lightning/toolbox", continuing
@@ -66,22 +62,22 @@
 46 info publish Publishing packages to npm...
 47 info Verifying npm credentials
 48 verbose Retrieving npm user profile
-49 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 864ms
+49 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 868ms
 50 silly npm profile get received {"tfa":false,"name":"lightning-studio","email":"lightningdevsstudio@gmail.com","email_verified":true,"created":"2020-07-09T03:34:42.110Z","updated":"2020-07-11T02:08:12.087Z","cidr_whitelist":null,"fullname":"LightningDevs Studio"}
 51 silly get npm username received {"username":"lightning-studio","tfa":false,"name":"lightning-studio","email":"lightningdevsstudio@gmail.com","email_verified":true,"created":"2020-07-09T03:34:42.110Z","updated":"2020-07-11T02:08:12.087Z","cidr_whitelist":null,"fullname":"LightningDevs Studio"}
 52 silly verifyNpmPackageAccess
-53 http fetch GET 200 https://registry.npmjs.org/-/org/lightning-studio/package?format=cli 554ms
+53 http fetch GET 200 https://registry.npmjs.org/-/org/lightning-studio/package?format=cli 589ms
 54 warn The logged-in user does not have any previously-published packages, skipping permission checks...
 55 info Checking two-factor auth mode
 56 verbose Retrieving npm user profile
-57 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 568ms
+57 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 560ms
 58 silly npm profile get received {"tfa":false,"name":"lightning-studio","email":"lightningdevsstudio@gmail.com","email_verified":true,"created":"2020-07-09T03:34:42.110Z","updated":"2020-07-11T02:08:12.087Z","cidr_whitelist":null,"fullname":"LightningDevs Studio"}
 59 silly 2FA false
 60 warn ENOLICENSE Packages @lightning/conditioners and @lightning/sequences are missing a license.
 60 warn ENOLICENSE One way to fix this is to add a LICENSE.md file to the root of this repository.
 60 warn ENOLICENSE See https://choosealicense.com for additional guidance.
 61 silly getCurrentSHA
-62 verbose getCurrentSHA 578d9e9250383198839d2cc81aea5134f4086788
+62 verbose getCurrentSHA 6cf4eba84b8243b277ad7d28d390c76deacabf5f
 63 warn lifecycle Skipping root "prepublish" because it has already been called
 64 silly lifecycle No script for "prepare" in "@lightning/toolbox", continuing
 65 silly lifecycle No script for "prepublishOnly" in "@lightning/toolbox", continuing

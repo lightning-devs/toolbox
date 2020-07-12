@@ -1,5 +1,5 @@
 {
-  "name": "@lightning/toolbox",
+  "name": "@lightning-devs/toolbox",
   "version": "0.0.0",
   "license": "MIT",
   "husky": {
@@ -11,7 +11,7 @@
     "nx": "nx",
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test",
+    "test": "nx test conditioners && nx test sequences",
     "lint": "nx workspace-lint && nx lint",
     "e2e": "nx e2e",
     "affected:apps": "nx affected:apps",
@@ -29,9 +29,10 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
+    "clean:dists": "rm -rf libs/sequences/dist && rm -rf libs/conditioners/dist && rm -rf libs/function-seeker/dist",
     "build:libs": "nx build conditioners --with-deps && nx build sequences --with-deps",
-    "prepublish": "nx test conditioners && nx test sequences",
-    "publish":  "npm run build:libs && lerna publish --contents dist"
+    "prepublish": "npm run test",
+    "publish:libs": "npm run build:libs && lerna publish --contents dist && npm run clean:dists"
   },
   "private": true,
   "devDependencies": {
@@ -51,7 +52,7 @@
     "jest": "25.2.3",
     "lerna": "^3.22.1",
     "prettier": "2.0.4",
-    "ts-jest": "25.2.1",
+    "ts-jest": "^26.1.1",
     "ts-node": "~7.0.0",
     "tslint": "~6.0.0",
     "typescript": "~3.8.3"

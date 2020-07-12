@@ -1,9 +1,9 @@
-import { Sequence } from './sequences.typing';
-import isEmpty from 'lodash/isEmpty';
-import { reduce } from 'awaity/fp';
-import { getFunctionSeeker, FunctionSeeker } from '@lightning-devs/function-seeker';
-
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
+const isEmpty_1 = require("lodash/isEmpty");
+const fp_1 = require("awaity/fp");
+const function_seeker_1 = require("@lightning-devs/function-seeker");
 /**
  * This is a composer function capable of handle those functions that return promises as result
  *
@@ -12,17 +12,16 @@ import { getFunctionSeeker, FunctionSeeker } from '@lightning-devs/function-seek
  */
 function asyncCompose(...functions) {
     return initialValue => {
-        const reduced = reduce(async (finalValue, currentFunction) => {
+        const reduced = fp_1.reduce((finalValue, currentFunction) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             let currentValue = currentFunction(finalValue);
             if (currentValue instanceof Promise) {
-                currentValue = await currentValue;
+                currentValue = yield currentValue;
             }
             return currentValue;
-        }, initialValue);
+        }), initialValue);
         return reduced(functions);
-    }
+    };
 }
-
 /**
  * Function capable of map using a function that returns Promises as values
  *
@@ -38,7 +37,6 @@ const map = mapFunction => valueArray => {
     }
     return mappedValues;
 };
-
 /**
  * This function generate Transformers using a sequence and a functionSeeker
  *
@@ -46,8 +44,8 @@ const map = mapFunction => valueArray => {
  * @param {Function} functionSeeker     A function that receives a functionName {string} and looks for it on its sources of functions
  * @returns {Promise<any>}              Returns a function that receives an initial value and transforms it using the sequence that it received as param
  */
-function getTransformer(sequences: Sequence[], functionSeeker: FunctionSeeker): (any) => Promise<any> {
-    const functionsToBeComposed = sequences.map((sequence: Sequence) => {
+function getTransformer(sequences, functionSeeker) {
+    const functionsToBeComposed = sequences.map((sequence) => {
         const { type, apply } = sequence;
         const { using, params } = apply;
         const functionToApply = functionSeeker(using);
@@ -55,21 +53,21 @@ function getTransformer(sequences: Sequence[], functionSeeker: FunctionSeeker): 
             throw new Error(`This function cannot be find ${using}, please review your sources of functions.`);
         }
         let partialFunction = functionToApply;
-        if (!isEmpty(params)) {
+        if (!isEmpty_1.default(params)) {
             if (Array.isArray(params)) {
                 partialFunction = functionToApply(...params);
-            } else {
+            }
+            else {
                 partialFunction = functionToApply(params);
             }
         }
         if (type === 'map') {
-            return map(partialFunction as (item) => Record<string, any>);
+            return map(partialFunction);
         }
         return partialFunction;
     });
     return asyncCompose(...functionsToBeComposed);
 }
-
 /**
  * Curried function capable of transform values to objects by using the transformations described by the sequences provided for every expected field
  *
@@ -79,32 +77,29 @@ function getTransformer(sequences: Sequence[], functionSeeker: FunctionSeeker): 
  * @returns {Object}                    Object generated using the transformers created by the field sequences
  */
 const getFieldsFunction = functionSeeker => fieldsParams => {
-  const { fieldsSequences } = fieldsParams;
-
-  const getFieldsTransformers = reduce(async (fieldOperators, [key, fieldDefinition]) => {
-      const { sequence } = fieldDefinition;
-      const transformer = !isEmpty(sequence) && (getTransformer(sequence, functionSeeker));
-      const operator = async (itemValue) => {
-          if (!transformer) return 'Sequence Required';
-          const transformedValue = await transformer(itemValue);
-          return isEmpty(transformedValue) ? '' : transformedValue;
-      }
-      fieldOperators[key] = operator || (() => '');
-      return fieldOperators;
-  }, {});
-
-  const transformer = getFieldsTransformers(Object.entries(fieldsSequences));
-
-  return async currentValue => {
-      const fieldsTransformers = await transformer;
-      const getTransformedFields = reduce(async (acc, key) => {
-          acc[key] = await fieldsTransformers[key](currentValue);
-          return acc;
-      }, {});
-      return await getTransformedFields(Object.keys(fieldsTransformers));
-  }
-}
-
+    const { fieldsSequences } = fieldsParams;
+    const getFieldsTransformers = fp_1.reduce((fieldOperators, [key, fieldDefinition]) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
+        const { sequence } = fieldDefinition;
+        const transformer = !isEmpty_1.default(sequence) && (getTransformer(sequence, functionSeeker));
+        const operator = (itemValue) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
+            if (!transformer)
+                return 'Sequence Required';
+            const transformedValue = yield transformer(itemValue);
+            return isEmpty_1.default(transformedValue) ? '' : transformedValue;
+        });
+        fieldOperators[key] = operator || (() => '');
+        return fieldOperators;
+    }), {});
+    const transformer = getFieldsTransformers(Object.entries(fieldsSequences));
+    return (currentValue) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
+        const fieldsTransformers = yield transformer;
+        const getTransformedFields = fp_1.reduce((acc, key) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
+            acc[key] = yield fieldsTransformers[key](currentValue);
+            return acc;
+        }), {});
+        return yield getTransformedFields(Object.keys(fieldsTransformers));
+    });
+};
 /**
  * This is a 'only forward' function, that is going to be used as expression for our intern source of functions
  *
@@ -112,7 +107,6 @@ const getFieldsFunction = functionSeeker => fieldsParams => {
  * @returns {any}             The same value that was received as param
  */
 const returns = (returnValue) => () => returnValue;
-
 /**
  * Curried function that allows to use a Sequencer as a expression in a transformation sequence, consequently this is used as a part of an intern source of functions.
  *
@@ -120,11 +114,10 @@ const returns = (returnValue) => () => returnValue;
  * @param {Object} sequenceParams       An object with a sequence, required to create a transformer, and the currentValue from the sequence that is being runned in order to initiate a side sequence that will transform the current value
  * @returns {any}                       A new value generated by the transformer created using the params described before
 */
-const getSequencerAsExpression = sourceOfFunctions => async (sequenceParams) => {
+const getSequencerAsExpression = sourceOfFunctions => (sequenceParams) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
     const { initialValues, currentValue: sequence } = sequenceParams;
-    return await getSequencer(...sourceOfFunctions)(sequence)({ initialValues });
-}
-
+    return yield getSequencer(...sourceOfFunctions)(sequence)({ initialValues });
+});
 /**
  * This is a curried function that works in different stages:
  * 1. Receives some sources of functions and returns a "Sequencer"
@@ -136,18 +129,21 @@ const getSequencerAsExpression = sourceOfFunctions => async (sequenceParams) => 
  * @param {any} initialValue            The value that will be used to initiate the sequence of transformations
  * @returns {Promise<any>}              Using the params described before, this curried function will return a transformed value by using the sequence and the initial value
  */
-export function getSequencer(...sourcesOfFunctions) {
-    return (sequence) => async ({ initialValues }) => {
+function getSequencer(...sourcesOfFunctions) {
+    return (sequence) => ({ initialValues }) => tslib_1.__awaiter(this, void 0, void 0, function* () {
         try {
             const sequencerExpression = getSequencerAsExpression(sourcesOfFunctions);
             const sources = [...sourcesOfFunctions, { returns, sequencer: sequencerExpression }];
-            const fields = getFieldsFunction(getFunctionSeeker(sources));
-            const functionSeeker = getFunctionSeeker([...sources, { fields }]);
+            const fields = getFieldsFunction(function_seeker_1.getFunctionSeeker(sources));
+            const functionSeeker = function_seeker_1.getFunctionSeeker([...sources, { fields }]);
             const transformer = getTransformer(sequence, functionSeeker);
-            return await transformer(initialValues);
-        } catch (error) {
+            return yield transformer(initialValues);
+        }
+        catch (error) {
             console.error(error);
             throw error;
         }
-    }
+    });
 }
+exports.getSequencer = getSequencer;
+//# sourceMappingURL=sequences.js.map
