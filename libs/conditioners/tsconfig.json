@@ -3,5 +3,9 @@
   "compilerOptions": {
     "types": ["node", "jest"]
   },
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts"],
+  "typedocOptions": {
+    "mode": "modules",
+    "out": "docs"
+  }
 }
