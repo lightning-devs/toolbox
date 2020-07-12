@@ -29,12 +29,12 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "clean:dists": "rm -rf libs/sequences/dist && rm -rf libs/conditioners/dist && rm -rf libs/function-seeker/dist",
+    "clean:dists": "rm -rf tmp && rm -rf libs/sequences/dist && rm -rf libs/conditioners/dist && rm -rf libs/function-seeker/dist",
     "build:libs": "nx build conditioners --with-deps && nx build sequences --with-deps",
     "prepublish": "npm run test",
     "publish:libs": "npm run build:libs && lerna publish --contents dist && npm run clean:dists"
   },
-  "private": true,
+  "private": false,
   "devDependencies": {
     "@nrwl/eslint-plugin-nx": "9.5.1",
     "@nrwl/jest": "^9.5.1",
