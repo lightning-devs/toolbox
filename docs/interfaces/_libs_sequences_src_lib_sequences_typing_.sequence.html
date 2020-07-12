@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ConditionalCase | @lightning/toolbox</title>
-	<meta name="description" content="Documentation for @lightning/toolbox">
+	<title>Sequence | @lightning/function-seeker</title>
+	<meta name="description" content="Documentation for @lightning/function-seeker">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">@lightning/toolbox</a>
+					<a href="../index.html" class="title">@lightning/function-seeker</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_libs_conditioners_src_lib_conditioner_typing_.html">&quot;libs/conditioners/src/lib/conditioner.typing&quot;</a>
+					<a href="../modules/_libs_sequences_src_lib_sequences_typing_.html">&quot;libs/sequences/src/lib/sequences.typing&quot;</a>
 				</li>
 				<li>
-					<a href="_libs_conditioners_src_lib_conditioner_typing_.conditionalcase.html">ConditionalCase</a>
+					<a href="_libs_sequences_src_lib_sequences_typing_.sequence.html">Sequence</a>
 				</li>
 			</ul>
-			<h1>Interface ConditionalCase</h1>
+			<h1>Interface Sequence</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ConditionalCase</span>
+						<span class="target">Sequence</span>
 					</li>
 				</ul>
 			</section>
@@ -84,8 +84,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_libs_conditioners_src_lib_conditioner_typing_.conditionalcase.html#returns" class="tsd-kind-icon">returns</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_libs_conditioners_src_lib_conditioner_typing_.conditionalcase.html#when" class="tsd-kind-icon">when</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_libs_sequences_src_lib_sequences_typing_.sequence.html#apply" class="tsd-kind-icon">apply</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_libs_sequences_src_lib_sequences_typing_.sequence.html#cases" class="tsd-kind-icon">cases</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_libs_sequences_src_lib_sequences_typing_.sequence.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,22 +95,43 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="returns" class="tsd-anchor"></a>
-					<h3>returns</h3>
-					<div class="tsd-signature tsd-kind-icon">returns<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<a name="apply" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> apply</h3>
+					<div class="tsd-signature tsd-kind-icon">apply<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>params<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>using<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lightning-devs/toolbox/blob/c255c09/libs/conditioners/src/lib/conditioner.typing.ts#L24">libs/conditioners/src/lib/conditioner.typing.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/lightning-devs/toolbox/blob/082eb6f/libs/sequences/src/lib/sequences.typing.ts#L6">libs/sequences/src/lib/sequences.typing.ts:6</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> params<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>using<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="cases" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> cases</h3>
+					<div class="tsd-signature tsd-kind-icon">cases<span class="tsd-signature-symbol">:</span> <a href="_libs_conditioners_src_lib_conditioner_typing_.conditionalcase.html" class="tsd-signature-type">ConditionalCase</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/lightning-devs/toolbox/blob/082eb6f/libs/sequences/src/lib/sequences.typing.ts#L5">libs/sequences/src/lib/sequences.typing.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="when" class="tsd-anchor"></a>
-					<h3>when</h3>
-					<div class="tsd-signature tsd-kind-icon">when<span class="tsd-signature-symbol">:</span> <a href="../modules/_libs_conditioners_src_lib_conditioner_typing_.html#conditioner" class="tsd-signature-type">Conditioner</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"fallback"</span></div>
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"expression"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"condition"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"map"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lightning-devs/toolbox/blob/c255c09/libs/conditioners/src/lib/conditioner.typing.ts#L23">libs/conditioners/src/lib/conditioner.typing.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/lightning-devs/toolbox/blob/082eb6f/libs/sequences/src/lib/sequences.typing.ts#L4">libs/sequences/src/lib/sequences.typing.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -121,9 +143,6 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class="label tsd-is-external">
-						<span>Internals</span>
-					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/_libs_conditioners_src_index_.html">&quot;libs/conditioners/src/index&quot;</a>
 					</li>
@@ -133,20 +152,32 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_libs_conditioners_src_lib___tests__conditioners_spec_.html">&quot;libs/conditioners/src/lib/__tests_<wbr>/conditioners.spec&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/_libs_conditioners_src_lib_conditioner_typing_.html">&quot;libs/conditioners/src/lib/conditioner.typing&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/_libs_conditioners_src_lib_conditioners_.html">&quot;libs/conditioners/src/lib/conditioners&quot;</a>
 					</li>
-					<li class="label tsd-is-external">
-						<span>Externals</span>
-					</li>
-					<li class=" tsd-kind-module tsd-is-external">
+					<li class=" tsd-kind-module">
 						<a href="../modules/_libs_function_seeker_src_index_.html">&quot;libs/function-<wbr>seeker/src/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-module tsd-is-external">
+					<li class=" tsd-kind-module">
 						<a href="../modules/_libs_function_seeker_src_lib_function_seeker_.html">&quot;libs/function-<wbr>seeker/src/lib/function-<wbr>seeker&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_libs_function_seeker_src_lib_function_seeker_spec_.html">&quot;libs/function-<wbr>seeker/src/lib/function-<wbr>seeker.spec&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_libs_sequences_src_index_.html">&quot;libs/sequences/src/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_libs_sequences_src_lib_sequences_.html">&quot;libs/sequences/src/lib/sequences&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_libs_sequences_src_lib_sequences_spec_.html">&quot;libs/sequences/src/lib/sequences.spec&quot;</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/_libs_sequences_src_lib_sequences_typing_.html">&quot;libs/sequences/src/lib/sequences.typing&quot;</a>
 					</li>
 				</ul>
 			</nav>
@@ -155,24 +186,21 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_libs_conditioners_src_lib_conditioner_typing_.conditionalcase.html" class="tsd-kind-icon">Conditional<wbr>Case</a>
+						<a href="_libs_sequences_src_lib_sequences_typing_.sequence.html" class="tsd-kind-icon">Sequence</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_libs_conditioners_src_lib_conditioner_typing_.conditionalcase.html#returns" class="tsd-kind-icon">returns</a>
+								<a href="_libs_sequences_src_lib_sequences_typing_.sequence.html#apply" class="tsd-kind-icon">apply</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_libs_conditioners_src_lib_conditioner_typing_.conditionalcase.html#when" class="tsd-kind-icon">when</a>
+								<a href="_libs_sequences_src_lib_sequences_typing_.sequence.html#cases" class="tsd-kind-icon">cases</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_libs_sequences_src_lib_sequences_typing_.sequence.html#type" class="tsd-kind-icon">type</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_libs_conditioners_src_lib_conditioner_typing_.whenbooleanrelations.html" class="tsd-kind-icon">When<wbr>Boolean<wbr>Relations</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="../modules/_libs_conditioners_src_lib_conditioner_typing_.html#conditioner" class="tsd-kind-icon">Conditioner</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
