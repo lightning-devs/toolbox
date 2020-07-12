@@ -6,5 +6,6 @@
   },
   "dependencies": {
     "@lightning/function-seeker": "^0.0.1"
-  }
+  },
+  "gitHead": "2e4a517ee8eb98824a6e416d7678797408201fb9"
 }

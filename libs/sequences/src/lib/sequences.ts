@@ -3,6 +3,7 @@ import isEmpty from 'lodash/isEmpty';
 import { reduce } from 'awaity/fp';
 import { getFunctionSeeker, FunctionSeeker } from '@lightning/function-seeker';
 
+
 /**
  * This is a composer function capable of handle those functions that return promises as result
  *

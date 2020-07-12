@@ -29,8 +29,8 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "build:libs": "nx build conditioners --with-deps && nx build sequences --with-deps && lerna publish",
-    "prepublish": "nx test conditioners &6 nx test sequences",
+    "build:libs": "nx build conditioners --with-deps && nx build sequences --with-deps",
+    "prepublish": "nx test conditioners && nx test sequences",
     "publish":  "npm run build:libs && lerna publish --contents dist"
   },
   "private": true,
