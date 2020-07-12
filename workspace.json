@@ -99,6 +99,16 @@
             "tsConfig": "libs/function-seeker/tsconfig.spec.json",
             "passWithNoTests": true
           }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/libs/function-seeker",
+            "tsConfig": "libs/function-seeker/tsconfig.lib.json",
+            "packageJson": "libs/function-seeker/package.json",
+            "main": "libs/function-seeker/src/index.ts",
+            "assets": ["libs/function-seeker/*.md"]
+          }
         }
       }
     }

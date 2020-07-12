@@ -2,6 +2,11 @@
   "name": "@lightning/toolbox",
   "version": "0.0.0",
   "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-push": "nx test conditioners && nx test sequences"
+    }
+  },
   "scripts": {
     "nx": "nx",
     "start": "nx serve",
@@ -23,7 +28,10 @@
     "update": "nx migrate latest",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "build:libs": "nx build conditioners --with-deps && nx build sequences --with-deps",
+    "prepublish": "nx test conditioners && nx test sequences",
+    "publish":  "npm run build:libs && lerna publish --contents dist"
   },
   "private": true,
   "devDependencies": {
@@ -32,13 +40,14 @@
     "@nrwl/node": "^9.5.1",
     "@nrwl/web": "^9.5.1",
     "@nrwl/workspace": "9.5.1",
-    "@types/jest": "25.1.4",
+    "@types/jest": "^25.1.4",
     "@types/node": "~8.9.4",
     "@typescript-eslint/eslint-plugin": "2.19.2",
     "@typescript-eslint/parser": "2.19.2",
     "dotenv": "6.2.0",
     "eslint": "6.8.0",
     "eslint-config-prettier": "6.0.0",
+    "husky": "^4.2.5",
     "jest": "25.2.3",
     "lerna": "^3.22.1",
     "prettier": "2.0.4",
