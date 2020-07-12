@@ -28,7 +28,10 @@
     "update": "nx migrate latest",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "build:libs": "nx build conditioners --with-deps && nx build sequences --with-deps && lerna publish",
+    "prepublish": "nx test conditioners &6 nx test sequences",
+    "publish":  "npm run build:libs && lerna publish --contents dist"
   },
   "private": true,
   "devDependencies": {
