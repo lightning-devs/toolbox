@@ -4,7 +4,7 @@
   "license": "MIT",
   "husky": {
     "hooks": {
-      "pre-push": "nx affected --target=test"
+      "pre-push": "nx test conditioners && nx test sequences"
     }
   },
   "scripts": {
