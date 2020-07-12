@@ -21,5 +21,9 @@
       "@lightning/function-seeker": ["libs/function-seeker/src/index.ts"]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp"],
+  "typedocOptions": {
+    "mode": "modules",
+    "out": "docs"
+  }
 }

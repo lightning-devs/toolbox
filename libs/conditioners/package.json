@@ -1,4 +1,7 @@
 {
   "name": "@lightning/conditioners",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "devDependencies": {
+    "typedoc": "^0.17.8"
+  }
 }
