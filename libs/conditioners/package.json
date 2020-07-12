@@ -1,4 +1,10 @@
 {
   "name": "@lightning/conditioners",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "scripts": {
+    "test": "nx test conditioners"
+  },
+  "dependencies": {
+    "@lightning/function-seeker": "^0.0.1"
+  }
 }
