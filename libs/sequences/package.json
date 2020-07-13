@@ -1,8 +1,8 @@
 {
   "name": "@lightning-devs/sequences",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "private": false,
-  "gitHead": "fab57ebabe3c06e9064ee19ec8d664f39d15d356",
+  "gitHead": "efcfc845b5a10f1d7bee054da7406542e9f4e1a0",
   "peerDependencies": {
     "@lightning-devs/function-seeker": "^1.0.6",
     "lodash": "^4.17.19"
