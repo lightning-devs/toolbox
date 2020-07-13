@@ -60,16 +60,19 @@ describe('Conditioner Testing', () => {
     let conditioner;
 
     beforeAll(() => {
-        conditioner = getConditioner({
-            includes,
-            isArray,
-            every,
-            includesEvery,
-            isEmpty,
-            greaterThan,
-            isNumber,
-            isString
-        })({ cases });
+        const sources = [
+            {
+                includes,
+                isArray,
+                every,
+                includesEvery,
+                isEmpty,
+                greaterThan,
+                isNumber,
+                isString
+            }
+        ];
+        conditioner = getConditioner({ sources })({ cases });
     });
 
     describe('Fallback test cases', () => {

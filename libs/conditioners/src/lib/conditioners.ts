@@ -1,8 +1,13 @@
 import { getFunctionSeeker } from '@lightning-devs/function-seeker';
-import { ConditionalCase, Conditioner } from './conditioner.typing';
+import { ConditionalCase, Condition, ConditionerConfig } from './conditioner.typing';
 import { isEmpty, flow } from 'lodash';
 
 type FunctionSeeker = (functionName: string) => Function
+
+const LOG_LEVEL = {
+    NONE: 'none',
+    VERBOSE: 'verbose',
+};
 
 const booleanRelations = ['is', 'it'];
 const andBooleanRelations = ['andIt', 'andIs'];
@@ -30,18 +35,18 @@ const logs = (func) => (...params) => {
  * This function composes the cases described by a specific conditioner (when clause)
  * and returns a function capable of determine if the case is successful based on an initial value
  * 
- * @param {Conditioner[]} conditioners          An array with the conditions that will be evaluated
+ * @param {Condition[]} conditions          An array with the conditions that will be evaluated
  * @param {FunctionSeeker} functionSeeker       Function that receives a function's name and returns it from the sources of functions
  * @returns {Function}                          Function that receives an initial value and returns if it's true based on the conditioners provided before
  */
-const getConditionalPredicate = (conditioners: Conditioner[], functionSeeker: FunctionSeeker) => {
-    if (isEmpty(conditioners)) throw new Error('The "when" clause must have at least 1 conditioner.')
-    const conditionersToCompose = conditioners.map((conditioner) => {
-        const conditionerKeys = Object.keys(conditioner);
+const getConditionalPredicate = (conditions: Condition[], functionSeeker: FunctionSeeker, { logLevel } = { logLevel: LOG_LEVEL.NONE}) => {
+    if (isEmpty(conditions)) throw new Error('The "when" clause must have at least 1 conditioner.')
+    const conditionersToCompose = conditions.map((condition, index) => {
+        const conditionerKeys = Object.keys(condition);
         if (conditionerKeys.length > 2) throw new Error('There to many properties on the conditional case');
-        if (conditionerKeys.length === 0) throw new Error('Some conditioners don\'t have the right amount of parameters');
-        const [relation, value] = Object.entries(conditioner).find(([key]) => allRelations.includes(key));
-        const [, params = []] = Object.entries(conditioner).find(([key]) => paramProperties.includes(key)) || [];
+        if (conditionerKeys.length === 0) throw new Error('Some conditions don\'t have the right amount of parameters');
+        const [relation, value] = Object.entries(condition).find(([key]) => allRelations.includes(key));
+        const [, params = []] = Object.entries(condition).find(([key]) => paramProperties.includes(key)) || [];
         const functionToApply = functionSeeker(value as string) || (() => val => val);
         const partialFunction = isEmpty(params) ? functionToApply : functionToApply(...params);
         const shouldNegateBoolean = allNegatedRelations.includes(relation);
@@ -59,7 +64,11 @@ const getConditionalPredicate = (conditioners: Conditioner[], functionSeeker: Fu
             let nextBoolean = actualBoolean;
             if (isOrRelation) nextBoolean = currentBoolean || actualBoolean;
             if (isAndRelation) nextBoolean = currentBoolean && actualBoolean;
-            return { currentBoolean: nextBoolean, currentValue };
+            const nextParameters = { currentBoolean: nextBoolean, currentValue };
+            if (logLevel === LOG_LEVEL.VERBOSE) {
+                console.log(`===> Index: ${index}; Statement: ${JSON.stringify(condition)}; Returned Params: ${JSON.stringify(nextParameters)}`);
+            }
+            return nextParameters
         }
     }, []);
     return flow((currentValue) => ({ currentBoolean: false, currentValue }), ...conditionersToCompose);
@@ -73,19 +82,23 @@ const getConditionalPredicate = (conditioners: Conditioner[], functionSeeker: Fu
  * @param {Object {cases: Array<ConditionalCase>}} conditionalSequence      An array with the boolean conditions to be evaluated and its respective return value
  * @returns {Function}                                                      This function receives an initial value and returns the value described by the first true case
  */
-export const getConditioner = (...sourceFunctions) => (conditionalSequence: { cases: ConditionalCase[] }) => {
+export const getConditioner = (conditionerConfig: ConditionerConfig) => (conditionalSequence: { cases: ConditionalCase[] }) => {
+    const { sources: sourceFunctions, config: { logLevel } = { logLevel: LOG_LEVEL.NONE} } = conditionerConfig;
     const { cases: conditionalCases = [] } = conditionalSequence;
     const functionSeeker = getFunctionSeeker(sourceFunctions);
     return (initialValues) => {
-        const successCase = conditionalCases.find(conditionalCase => {
+        const successCase = conditionalCases.find((conditionalCase, index) => {
             const { when } = conditionalCase;
             if (when === 'fallback') return true;
-            const whenPredicate = getConditionalPredicate(when, functionSeeker);
+            const whenPredicate = getConditionalPredicate(when, functionSeeker, { logLevel });
             const { currentBoolean } = whenPredicate(initialValues);
+            if (logLevel === LOG_LEVEL.VERBOSE) {
+                console.log(`Index: ${index}; Statement: ${JSON.stringify(when)}; Is it True?: ${currentBoolean}`);
+            }
             return currentBoolean;
         });
         if (isEmpty(successCase)) return null;
-        if (isEmpty(successCase.returns)) throw new Error('Every conditional case must have a "returns" property.');
+        if (isEmpty(successCase.returns)) throw new Error('Every condition must have a "returns" property.');
         return {
             initialValues,
             currentValue: successCase.returns,

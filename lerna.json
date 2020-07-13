@@ -1,7 +1,9 @@
 {
   "packages": [
     "libs/conditioners",
-    "libs/sequences"
+    "libs/sequences",
+    "libs/function-seeker",
+    "./"
   ],
   "version": "1.0.5",
   "npmClient": "npm"

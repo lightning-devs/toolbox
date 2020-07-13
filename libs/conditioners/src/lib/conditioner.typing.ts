@@ -11,15 +11,22 @@ export interface WhenBooleanRelations {
     andItDoesnt: string;
     orIsNot: string;
     orItDoesnt: string;
-    to: any[];
-    this: any[];
+    to: string[] | number[] | boolean[] | Record<string, any>[] | Array<any>;
+    this: string[] | number[] | boolean[] | Record<string, any>[] | Array<any>;
 }
 
-export type Conditioner = {
+export type Condition = {
     readonly [K in keyof WhenBooleanRelations]: WhenBooleanRelations[K];
 }
 
 export interface ConditionalCase {
-    when: Conditioner[] | 'fallback';
-    returns: any;
+    when: Condition[] | 'fallback';
+    returns: string[] | number[] | boolean[] | Record<string, any>[] | Array<any>;
+}
+
+export interface ConditionerConfig {
+    sources: Array<Record<string, Function>>;
+    config?: {
+        logLevel: 'verbose' | 'none';
+    };
 }

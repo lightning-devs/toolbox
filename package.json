@@ -29,10 +29,10 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "clean:dists": "rm -rf tmp && rm -rf libs/sequences/dist && rm -rf libs/conditioners/dist && rm -rf libs/function-seeker/dist",
+    "clean:libs": "rm -rf tmp && rm -rf libs/sequences/dist && rm -rf libs/conditioners/dist && rm -rf libs/function-seeker/dist",
     "build:libs": "nx build conditioners --with-deps && nx build sequences --with-deps",
     "prepublish": "npm run test",
-    "publish:libs": "npm run build:libs && lerna publish --contents dist && npm run clean:dists"
+    "publish:libs": "npm run build:libs && lerna publish --contents dist && npm run clean:libs"
   },
   "private": false,
   "devDependencies": {
