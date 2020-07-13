@@ -1,5 +1,5 @@
 import { Sequence } from './sequences.typing';
-import isEmpty from 'lodash/isEmpty';
+import { isEmpty } from 'lodash';
 import { reduce } from 'awaity/fp';
 import { getFunctionSeeker, FunctionSeeker } from '@lightning-devs/function-seeker';
 

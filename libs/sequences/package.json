@@ -2,7 +2,7 @@
   "name": "@lightning-devs/sequences",
   "version": "1.0.7",
   "private": false,
-  "gitHead": "6cf4eba84b8243b277ad7d28d390c76deacabf5f",
+  "gitHead": "fab57ebabe3c06e9064ee19ec8d664f39d15d356",
   "peerDependencies": {
     "@lightning-devs/function-seeker": "^1.0.6",
     "lodash": "^4.17.19"
