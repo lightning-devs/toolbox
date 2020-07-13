@@ -1,6 +1,6 @@
 {
   "name": "@lightning-devs/sequences",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "private": false,
   "gitHead": "efcfc845b5a10f1d7bee054da7406542e9f4e1a0",
   "peerDependencies": {
