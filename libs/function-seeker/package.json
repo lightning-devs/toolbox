@@ -1,6 +1,5 @@
 {
     "name": "@lightning-devs/function-seeker",
-    "version": "0.0.1",
+    "version": "1.0.6",
     "private": false
-  }
-  
+}
