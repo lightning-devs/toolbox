@@ -4,6 +4,6 @@
     "libs/sequences",
     "libs/function-seeker"
   ],
-  "version": "1.0.12",
+  "version": "1.0.13",
   "npmClient": "npm"
 }
