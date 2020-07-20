@@ -5,6 +5,6 @@ export interface Sequence {
     cases?: ConditionalCase[];
     apply?: {
         using: string,
-        params?: any[]
+        params?: string | number | boolean | Record<string, any> | Array<any>
     };
 }
