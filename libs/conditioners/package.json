@@ -1,6 +1,6 @@
 {
   "name": "@lightning-devs/conditioners",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -8,7 +8,7 @@
   "scripts": {
     "test": "nx test conditioners"
   },
-  "gitHead": "efcfc845b5a10f1d7bee054da7406542e9f4e1a0",
+  "gitHead": "9850827f766713cafc29c1e785329e7e1f9c8448",
   "peerDependencies": {
     "@lightning-devs/function-seeker": "^1.0.6",
     "lodash": "^4.17.19"
