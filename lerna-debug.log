@@ -12,15 +12,81 @@
 7 verbose currentBranch master
 8 silly remoteBranchExists
 9 silly isBehindUpstream
-10 error Error: Command failed: git remote update
-10 error fatal: unable to access 'https://github.com/lightning-devs/toolbox.git/': Failed to connect to github.com port 443: Timed out
-10 error error: Could not fetch origin
-10 error
-10 error Fetching origin
-10 error
-10 error     at makeError (C:\Users\abner.juarez\AppData\Roaming\nvm\v12.11.1\node_modules\lerna\node_modules\execa\index.js:174:9)
-10 error     at Function.module.exports.sync (C:\Users\abner.juarez\AppData\Roaming\nvm\v12.11.1\node_modules\lerna\node_modules\execa\index.js:338:15)
-10 error     at Object.execSync (C:\Users\abner.juarez\AppData\Roaming\nvm\v12.11.1\node_modules\lerna\node_modules\@lerna\child-process\index.js:26:16)
-10 error     at updateRemote (C:\Users\abner.juarez\AppData\Roaming\nvm\v12.11.1\node_modules\lerna\node_modules\@lerna\version\lib\is-behind-upstream.js:26:16)
-10 error     at isBehindUpstream (C:\Users\abner.juarez\AppData\Roaming\nvm\v12.11.1\node_modules\lerna\node_modules\@lerna\version\lib\is-behind-upstream.js:11:3)
-10 error     at VersionCommand.initialize (C:\Users\abner.juarez\AppData\Roaming\nvm\v12.11.1\node_modules\lerna\node_modules\@lerna\version\index.js:154:9)
+10 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 2
+11 silly hasTags
+12 verbose hasTags true
+13 silly git-describe.sync "v1.0.13-2-gb58221e" => {"lastTagName":"v1.0.13","lastVersion":"v1.0.13","refCount":"2","sha":"b58221e","isDirty":false}
+14 info Looking for changed packages since v1.0.13
+15 info ignoring diff in paths matching [
+15 info ignoring diff in paths matching   '**/*.md',
+15 info ignoring diff in paths matching   '**/*.spec.jsx',
+15 info ignoring diff in paths matching   '**/*.spec.js',
+15 info ignoring diff in paths matching   '**/*.snap',
+15 info ignoring diff in paths matching   '**/package-lock.json',
+15 info ignoring diff in paths matching   '**/__stories__/**/*',
+15 info ignoring diff in paths matching   '**/__data__/**/*'
+15 info ignoring diff in paths matching ]
+16 silly checking diff libs/conditioners
+17 silly no diff found in @lightning-devs/conditioners
+18 silly checking diff libs/function-seeker
+19 silly no diff found in @lightning-devs/function-seeker
+20 silly checking diff libs/sequences
+21 silly found diff in libs/sequences/src/lib/sequences.typing.ts
+22 verbose filtered diff [ 'libs/sequences/src/lib/sequences.typing.ts' ]
+23 verbose updated @lightning-devs/sequences
+24 verbose git-describe undefined => "v1.0.13-2-gb58221e"
+25 silly git-describe parsed => {"lastTagName":"v1.0.13","lastVersion":"v1.0.13","refCount":"2","sha":"b58221e","isDirty":false}
+26 silly independent for @lightning-devs/sequences at C:\Users\abner.juarez\Documents\personal\toolbox\libs\sequences
+27 verbose getChangelogConfig using preset "conventional-changelog-angular"
+28 silly npa Result {
+28 silly npa   type: 'tag',
+28 silly npa   registry: true,
+28 silly npa   where: undefined,
+28 silly npa   raw: 'conventional-changelog-angular',
+28 silly npa   name: 'conventional-changelog-angular',
+28 silly npa   escapedName: 'conventional-changelog-angular',
+28 silly npa   scope: undefined,
+28 silly npa   rawSpec: '',
+28 silly npa   saveSpec: null,
+28 silly npa   fetchSpec: 'latest',
+28 silly npa   gitRange: undefined,
+28 silly npa   gitCommittish: undefined,
+28 silly npa   hosted: undefined
+28 silly npa }
+29 verbose getChangelogConfig Attempting to resolve preset "conventional-changelog-angular"
+30 info getChangelogConfig Successfully resolved preset "conventional-changelog-angular"
+31 verbose independent increment 1.0.13 by patch
+32 info execute Skipping releases
+33 silly lifecycle No script for "preversion" in "@lightning-devs/toolbox", continuing
+34 silly lifecycle No script for "preversion" in "@lightning-devs/sequences", continuing
+35 silly lifecycle No script for "version" in "@lightning-devs/sequences", continuing
+36 silly independent for @lightning-devs/sequences at C:\Users\abner.juarez\Documents\personal\toolbox\libs\sequences
+37 silly independent writing new entry: "## 1.0.14 (2020-08-11)\n\n\n\n## 1.0.13 (2020-07-20)\n\n\n\n## 1.0.12 (2020-07-20)\n\n\n\n## 1.0.11 (2020-07-20)\n\n\n\n## 1.0.10 (2020-07-13)\n\n\n\n## 1.0.9 (2020-07-13)\n\n\n\n## 1.0.8 (2020-07-13)\n\n\n\n## 1.0.7 (2020-07-13)\n\n\n\n## 1.0.6 (2020-07-13)\n\n\n\n## 1.0.5 (2020-07-12)\n\n\n\n## 1.0.2 (2020-07-12)\n\n\n\n## 1.0.1 (2020-07-12)\n\n\n\n# 1.0.0 (2020-07-12)\n\n**Note:** Version bump only for package @lightning-devs/sequences\n\n\n\n"
+38 verbose independent wrote C:\Users\abner.juarez\Documents\personal\toolbox\libs\sequences\CHANGELOG.md
+39 silly lifecycle No script for "version" in "@lightning-devs/toolbox", continuing
+40 silly gitAdd [ 'libs/sequences/package.json', 'libs/sequences/CHANGELOG.md' ]
+41 silly gitCommit Publish
+41 silly gitCommit
+41 silly gitCommit  - @lightning-devs/sequences@1.0.14
+42 verbose git [
+42 verbose git   'commit',
+42 verbose git   '-F',
+42 verbose git   'C:\\Users\\ABNER~1.JUA\\AppData\\Local\\Temp\\3edad108-bb20-41da-acec-b7f644eeee26\\lerna-commit.txt'
+42 verbose git ]
+43 silly gitTag @lightning-devs/sequences@1.0.14
+44 verbose git [
+44 verbose git   'tag',
+44 verbose git   '@lightning-devs/sequences@1.0.14',
+44 verbose git   '-m',
+44 verbose git   '@lightning-devs/sequences@1.0.14'
+44 verbose git ]
+45 silly lifecycle No script for "postversion" in "@lightning-devs/sequences", continuing
+46 silly lifecycle No script for "postversion" in "@lightning-devs/toolbox", continuing
+47 info git Pushing tags...
+48 silly gitPush origin master
+49 error Error: Command failed: git push --follow-tags --no-verify --atomic origin master
+49 error remote: Permission to lightning-devs/toolbox.git denied to ajuarez-telus.
+49 error fatal: unable to access 'https://github.com/lightning-devs/toolbox.git/': The requested URL returned error: 403
+49 error
+49 error     at makeError (C:\Users\abner.juarez\AppData\Roaming\nvm\v12.11.1\node_modules\lerna\node_modules\execa\index.js:174:9)
+49 error     at C:\Users\abner.juarez\AppData\Roaming\nvm\v12.11.1\node_modules\lerna\node_modules\execa\index.js:278:16
