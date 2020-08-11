@@ -1,95 +1,26 @@
 0 silly argv {
-0 silly argv   _: [ 'publish' ],
-0 silly argv   contents: 'dist',
-0 silly argv   composed: 'publish',
+0 silly argv   _: [ 'version' ],
 0 silly argv   lernaVersion: '3.22.1',
-0 silly argv   '$0': 'node_modules\\lerna\\cli.js'
+0 silly argv   '$0': 'C:\\Program Files\\nodejs\\node_modules\\lerna\\cli.js'
 0 silly argv }
 1 notice cli v3.22.1
 2 verbose rootPath C:\Users\abner.juarez\Documents\personal\toolbox
-3 verbose session 685a3a72ace368f4
-4 verbose user-agent lerna/3.22.1/node@v12.11.1+x64 (win32)
-5 silly argv {
-5 silly argv   _: [ 'publish' ],
-5 silly argv   contents: 'dist',
-5 silly argv   composed: 'publish',
-5 silly argv   lernaVersion: '3.22.1'
-5 silly argv }
-6 verbose rootPath C:\Users\abner.juarez\Documents\personal\toolbox
-7 info current version 1.0.1
-8 silly isAnythingCommitted
-9 verbose isAnythingCommitted 1
-10 silly currentBranch
-11 verbose currentBranch master
-12 silly remoteBranchExists
-13 silly isBehindUpstream
-14 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 0
-15 silly hasTags
-16 verbose hasTags true
-17 silly git-describe.sync "v1.0.1-1-g980ace8" => {"lastTagName":"v1.0.1","lastVersion":"v1.0.1","refCount":"1","sha":"980ace8","isDirty":false}
-18 info Looking for changed packages since v1.0.1
-19 silly checking diff libs/conditioners
-20 silly found diff in libs/conditioners/package.json
-21 verbose filtered diff [ 'libs/conditioners/package.json' ]
-22 silly checking diff libs/sequences
-23 silly found diff in libs/sequences/package.json
-24 verbose filtered diff [ 'libs/sequences/package.json' ]
-25 verbose updated @lightning/conditioners
-26 verbose updated @lightning/sequences
-27 verbose git-describe undefined => "v1.0.1-1-g980ace8"
-28 silly git-describe parsed => {"lastTagName":"v1.0.1","lastVersion":"v1.0.1","refCount":"1","sha":"980ace8","isDirty":false}
-29 info execute Skipping releases
-30 silly lifecycle No script for "preversion" in "@lightning/toolbox", continuing
-31 silly lifecycle No script for "preversion" in "@lightning/conditioners", continuing
-32 silly lifecycle No script for "preversion" in "@lightning/sequences", continuing
-33 silly lifecycle No script for "version" in "@lightning/conditioners", continuing
-34 silly lifecycle No script for "version" in "@lightning/sequences", continuing
-35 silly lifecycle No script for "version" in "@lightning/toolbox", continuing
-36 silly gitAdd [
-36 silly gitAdd   'libs/conditioners/package.json',
-36 silly gitAdd   'libs/sequences/package.json',
-36 silly gitAdd   'lerna.json'
-36 silly gitAdd ]
-37 silly gitCommit v1.0.2
-38 verbose git [ 'commit', '-m', 'v1.0.2' ]
-39 silly gitTag v1.0.2
-40 verbose git [ 'tag', 'v1.0.2', '-m', 'v1.0.2' ]
-41 silly lifecycle No script for "postversion" in "@lightning/conditioners", continuing
-42 silly lifecycle No script for "postversion" in "@lightning/sequences", continuing
-43 silly lifecycle No script for "postversion" in "@lightning/toolbox", continuing
-44 info git Pushing tags...
-45 silly gitPush origin master
-46 info publish Publishing packages to npm...
-47 info Verifying npm credentials
-48 verbose Retrieving npm user profile
-49 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 868ms
-50 silly npm profile get received {"tfa":false,"name":"lightning-studio","email":"lightningdevsstudio@gmail.com","email_verified":true,"created":"2020-07-09T03:34:42.110Z","updated":"2020-07-11T02:08:12.087Z","cidr_whitelist":null,"fullname":"LightningDevs Studio"}
-51 silly get npm username received {"username":"lightning-studio","tfa":false,"name":"lightning-studio","email":"lightningdevsstudio@gmail.com","email_verified":true,"created":"2020-07-09T03:34:42.110Z","updated":"2020-07-11T02:08:12.087Z","cidr_whitelist":null,"fullname":"LightningDevs Studio"}
-52 silly verifyNpmPackageAccess
-53 http fetch GET 200 https://registry.npmjs.org/-/org/lightning-studio/package?format=cli 589ms
-54 warn The logged-in user does not have any previously-published packages, skipping permission checks...
-55 info Checking two-factor auth mode
-56 verbose Retrieving npm user profile
-57 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 560ms
-58 silly npm profile get received {"tfa":false,"name":"lightning-studio","email":"lightningdevsstudio@gmail.com","email_verified":true,"created":"2020-07-09T03:34:42.110Z","updated":"2020-07-11T02:08:12.087Z","cidr_whitelist":null,"fullname":"LightningDevs Studio"}
-59 silly 2FA false
-60 warn ENOLICENSE Packages @lightning/conditioners and @lightning/sequences are missing a license.
-60 warn ENOLICENSE One way to fix this is to add a LICENSE.md file to the root of this repository.
-60 warn ENOLICENSE See https://choosealicense.com for additional guidance.
-61 silly getCurrentSHA
-62 verbose getCurrentSHA 6cf4eba84b8243b277ad7d28d390c76deacabf5f
-63 warn lifecycle Skipping root "prepublish" because it has already been called
-64 silly lifecycle No script for "prepare" in "@lightning/toolbox", continuing
-65 silly lifecycle No script for "prepublishOnly" in "@lightning/toolbox", continuing
-66 silly lifecycle No script for "prepack" in "@lightning/toolbox", continuing
-67 verbose pack-directory libs\conditioners\dist
-68 verbose pack-directory libs\sequences\dist
-69 silly lifecycle No script for "prepublish" in "@lightning/conditioners", continuing
-70 silly lifecycle No script for "prepublish" in "@lightning/sequences", continuing
-71 silly lifecycle No script for "prepare" in "@lightning/conditioners", continuing
-72 silly lifecycle No script for "prepare" in "@lightning/sequences", continuing
-73 silly lifecycle No script for "prepublishOnly" in "@lightning/conditioners", continuing
-74 silly lifecycle No script for "prepublishOnly" in "@lightning/sequences", continuing
-75 silly lifecycle No script for "prepack" in "@lightning/conditioners", continuing
-76 silly lifecycle No script for "prepack" in "@lightning/sequences", continuing
-77 error
+3 info versioning independent
+4 silly isAnythingCommitted
+5 verbose isAnythingCommitted 1
+6 silly currentBranch
+7 verbose currentBranch master
+8 silly remoteBranchExists
+9 silly isBehindUpstream
+10 error Error: Command failed: git remote update
+10 error fatal: unable to access 'https://github.com/lightning-devs/toolbox.git/': Failed to connect to github.com port 443: Timed out
+10 error error: Could not fetch origin
+10 error
+10 error Fetching origin
+10 error
+10 error     at makeError (C:\Users\abner.juarez\AppData\Roaming\nvm\v12.11.1\node_modules\lerna\node_modules\execa\index.js:174:9)
+10 error     at Function.module.exports.sync (C:\Users\abner.juarez\AppData\Roaming\nvm\v12.11.1\node_modules\lerna\node_modules\execa\index.js:338:15)
+10 error     at Object.execSync (C:\Users\abner.juarez\AppData\Roaming\nvm\v12.11.1\node_modules\lerna\node_modules\@lerna\child-process\index.js:26:16)
+10 error     at updateRemote (C:\Users\abner.juarez\AppData\Roaming\nvm\v12.11.1\node_modules\lerna\node_modules\@lerna\version\lib\is-behind-upstream.js:26:16)
+10 error     at isBehindUpstream (C:\Users\abner.juarez\AppData\Roaming\nvm\v12.11.1\node_modules\lerna\node_modules\@lerna\version\lib\is-behind-upstream.js:11:3)
+10 error     at VersionCommand.initialize (C:\Users\abner.juarez\AppData\Roaming\nvm\v12.11.1\node_modules\lerna\node_modules\@lerna\version\index.js:154:9)

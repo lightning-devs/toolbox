@@ -1,9 +1,15 @@
 {
-  "packages": [
-    "libs/conditioners",
-    "libs/sequences",
-    "libs/function-seeker"
-  ],
-  "version": "1.0.13",
-  "npmClient": "npm"
+  "packages": ["libs/**"],
+  "version": "independent",
+  "npmClient": "npm",
+  "command": {
+    "version": {
+      "allowBranch": "**"
+    },
+    "publish": {
+      "allowBranch": "master",
+      "conventionalCommits": "true",
+      "ignoreChanges": ["**/*.md", "**/*.spec.jsx", "**/*.spec.js", "**/*.snap", "**/package-lock.json", "**/__stories__/**/*", "**/__data__/**/*"]
+    }
+  }
 }

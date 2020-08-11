@@ -34,7 +34,7 @@
     "prepublish": "npm run test",
     "publish:libs": "npm run clean:libs && npm run build:libs && lerna publish --contents dist --force-publish=* && npm run clean:libs"
   },
-  "private": false,
+  "private": true,
   "devDependencies": {
     "@nrwl/eslint-plugin-nx": "9.5.1",
     "@nrwl/jest": "^9.5.1",
