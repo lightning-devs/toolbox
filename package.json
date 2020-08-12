@@ -18,7 +18,7 @@
     "clean:libs": "lerna exec -- rm -rf dist",
     "prepublish": "npm run test",
     "publish": "lerna publish --contents dist",
-    "version": "lerna version --include-merged-tags --conventional-commits",
+    "version": "lerna version --include-merged-tags --conventional-commits --yes",
     "e2e": "nx e2e",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",
