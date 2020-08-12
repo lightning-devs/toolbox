@@ -10,9 +10,9 @@
   "scripts": {
     "nx": "nx",
     "start": "nx serve",
-    "init": "npm ci && npm run build",
-    "build": "nx affected:build --with-deps --all",
-    "test": "nx affected:test --all",
+    "init": "npm ci",
+    "build": "nx affected:build --with-deps",
+    "test": "nx affected:test",
     "lint": "nx workspace-lint && nx lint",
     "clean": "rm -rf tmp && npm run clean:libs && rm -rf node_modules",
     "clean:libs": "lerna exec -- rm -rf dist",
