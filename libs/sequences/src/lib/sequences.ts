@@ -144,6 +144,7 @@ export function getSequencer(...sourcesOfFunctions) {
             const fields = getFieldsFunction(getFunctionSeeker(sources));
             const functionSeeker = getFunctionSeeker([...sources, { fields }]);
             const transformer = getTransformer(sequence, functionSeeker);
+            console.log('Sorry but this console log was added for testing purposes.');
             return await transformer(initialValues);
         } catch (error) {
             console.error(error);
