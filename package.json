@@ -10,9 +10,15 @@
   "scripts": {
     "nx": "nx",
     "start": "nx serve",
-    "build": "nx build",
-    "test": "nx test conditioners && nx test sequences",
+    "init": "npm ci && npm run build",
+    "build": "nx affected:build --with-deps --all",
+    "test": "nx affected:test --all",
     "lint": "nx workspace-lint && nx lint",
+    "clean": "rm -rf tmp && npm run clean:libs && rm -rf node_modules",
+    "clean:libs": "lerna exec -- rm -rf dist",
+    "prepublish": "npm run test",
+    "publish": "lerna publish --contents dist",
+    "version": "lerna version --include-merged-tags --conventional-commits",
     "e2e": "nx e2e",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",
@@ -28,11 +34,7 @@
     "update": "nx migrate latest",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help",
-    "clean:libs": "rm -rf tmp && rm -rf libs/sequences/dist && rm -rf libs/conditioners/dist && rm -rf libs/function-seeker/dist",
-    "build:libs": "nx build conditioners --with-deps && nx build sequences --with-deps",
-    "prepublish": "npm run test",
-    "publish:libs": "npm run clean:libs && npm run build:libs && lerna publish --contents dist --force-publish=* && npm run clean:libs"
+    "help": "nx help"
   },
   "private": true,
   "devDependencies": {
