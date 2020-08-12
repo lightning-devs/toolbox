@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.19](https://github.com/lightning-devs/toolbox/compare/@lightning-devs/sequences@1.0.18...@lightning-devs/sequences@1.0.19) (2020-08-12)
+
+**Note:** Version bump only for package @lightning-devs/sequences
+
+
+
+
+
 ## [1.0.18](https://github.com/lightning-devs/toolbox/compare/@lightning-devs/sequences@1.0.16...@lightning-devs/sequences@1.0.18) (2020-08-12)
 
 **Note:** Version bump only for package @lightning-devs/sequences
