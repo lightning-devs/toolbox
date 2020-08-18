@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/lightning-devs/toolbox/compare/@lightning-devs/sequences@1.2.0...@lightning-devs/sequences@1.2.1) (2020-08-18)
+
+
+### Bug Fixes
+
+* **actions:** a command was added to let NX know which git base it should use for affected building ([d861361](https://github.com/lightning-devs/toolbox/commit/d861361c715883ab2d41ed2a468658183a63807b))
+
+
+
+
+
 # [1.2.0](https://github.com/lightning-devs/toolbox/compare/@lightning-devs/sequences@1.1.0...@lightning-devs/sequences@1.2.0) (2020-08-18)
 
 
