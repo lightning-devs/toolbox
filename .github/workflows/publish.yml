@@ -56,7 +56,7 @@ jobs:
       - name: Pump affected packages version
         run: npm run version
       - name: Build affected packages
-        run: npm run build
+        run: npm run ci:build
       - name: Publish packages
         run: npm run publish
         env:
