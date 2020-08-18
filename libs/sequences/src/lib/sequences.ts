@@ -143,7 +143,7 @@ export function getSequencer(...sourcesOfFunctions) {
             const sources = [...sourcesOfFunctions, { returns, sequencer: sequencerExpression }];
             const fields = getFieldsFunction(getFunctionSeeker(sources));
             const functionSeeker = getFunctionSeeker([...sources, { fields }]);
-            console.log('super console log');
+            // console.log('super console log');
             const transformer = getTransformer(sequence, functionSeeker);
             return await transformer(initialValues);
         } catch (error) {
