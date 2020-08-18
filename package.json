@@ -4,7 +4,8 @@
   "license": "MIT",
   "husky": {
     "hooks": {
-      "pre-push": "nx test conditioners && nx test sequences"
+      "pre-push": "npm run test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "scripts": {
@@ -16,6 +17,7 @@
     "lint": "nx workspace-lint && nx lint",
     "clean": "rm -rf tmp && npm run clean:libs && rm -rf node_modules",
     "clean:libs": "lerna exec -- rm -rf dist",
+    "commitmsg": "commitlint -E $GIT_PARAMS",
     "prepublish": "npm run test",
     "publish": "lerna publish from-git --contents dist --yes",
     "version": "lerna version --include-merged-tags --conventional-commits --yes",
@@ -38,6 +40,8 @@
   },
   "private": true,
   "devDependencies": {
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^9.1.1",
     "@nrwl/eslint-plugin-nx": "9.5.1",
     "@nrwl/jest": "^9.5.1",
     "@nrwl/node": "^9.5.1",
