@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/lightning-devs/toolbox/compare/@lightning-devs/sequences@1.2.1...@lightning-devs/sequences@1.2.2) (2020-08-18)
+
+
+### Bug Fixes
+
+* **building:** nx with-deps was added ([2149dad](https://github.com/lightning-devs/toolbox/commit/2149dadb0c61acda0b3cfc7086be6062bc2e5497))
+
+
+
+
+
 ## [1.2.1](https://github.com/lightning-devs/toolbox/compare/@lightning-devs/sequences@1.2.0...@lightning-devs/sequences@1.2.1) (2020-08-18)
 
 
