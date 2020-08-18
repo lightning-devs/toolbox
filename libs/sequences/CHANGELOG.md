@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/lightning-devs/toolbox/compare/@lightning-devs/sequences@1.0.20...@lightning-devs/sequences@1.1.0) (2020-08-18)
+
+
+### Features
+
+* **linting:** commitlit config was added; a console was added for testing as well ([c2f8d5a](https://github.com/lightning-devs/toolbox/commit/c2f8d5adcbde880ee23e69d967efa5c272658f6d))
+
+
+
+
+
 ## [1.0.20](https://github.com/lightning-devs/toolbox/compare/@lightning-devs/sequences@1.0.19...@lightning-devs/sequences@1.0.20) (2020-08-12)
 
 **Note:** Version bump only for package @lightning-devs/sequences
