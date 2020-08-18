@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/lightning-devs/toolbox/compare/@lightning-devs/sequences@1.1.0...@lightning-devs/sequences@1.2.0) (2020-08-18)
+
+
+### Features
+
+* **building:** build all libraries flag was added; super console log ([4fd0c59](https://github.com/lightning-devs/toolbox/commit/4fd0c59ce87a099fdbd7bcb71eb67423bb55726c))
+
+
+
+
+
 # [1.1.0](https://github.com/lightning-devs/toolbox/compare/@lightning-devs/sequences@1.0.20...@lightning-devs/sequences@1.1.0) (2020-08-18)
 
 
